@@ -37,6 +37,9 @@ class Leaderboard extends Component {
           </Col>
           
         </Row>
+        <Row>
+        <p>testing123</p>
+        </Row>
       </Container>
     );
   }

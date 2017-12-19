@@ -32,10 +32,13 @@ class Profile extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1> Profile? </h1>
+              <h1>Profile?</h1>
             </Jumbotron>
           </Col>
           
+        </Row>
+        <Row>
+        <p>testing123</p>
         </Row>
       </Container>
     );

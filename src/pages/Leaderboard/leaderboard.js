@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import BackGround from "../../components/BackGround";
+import './leaderboard.css';
 
 class Leaderboard extends Component {
   state = {
@@ -31,14 +32,11 @@ class Leaderboard extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1>Leaderboard?</h1>
-            </Jumbotron>
+          <article>
+            <h1>Leaderboard</h1>
+          </article>
+            <BackGround />  
           </Col>
-          
-        </Row>
-        <Row>
-        <p>testing123</p>
         </Row>
       </Container>
     );

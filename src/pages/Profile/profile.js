@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import Panel from "../../components/ProfPanel";
+import './profile.css';
 
 class Profile extends Component {
   state = {
@@ -28,19 +30,25 @@ class Profile extends Component {
 
   render() {
     return (
+      
+      
       <Container fluid>
+      <div className="video-background">
+      <div className="video-foreground">
+        <iframe src="https://www.youtube.com/embed/y2RVEK8XkFk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=y2RVEK8XkFk" frameBorder="0" allowFullScreen></iframe>
+       
+        </div>
+      </div>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1>Profile?</h1>
-            </Jumbotron>
+          <h1>Profile</h1>
           </Col>
-          
         </Row>
-        <Row>
-        <p>testing123</p>
-        </Row>
+        <Panel />
+        
+        
       </Container>
+      
     );
   }
 }

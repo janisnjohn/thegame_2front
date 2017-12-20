@@ -15,13 +15,14 @@ class Home extends Component {
   render() {
     return (
       <Container fluid>
+      <div className="video-background">
+      <div className="video-foreground">
+        <iframe src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameBorder="0" allowFullScreen></iframe>
+      </div>
+      </div>
         <Row>
           <Col size="md-12">
-          <div className="video-background">
-          <div className="video-foreground">
-            <iframe src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameBorder="0" allowFullScreen></iframe>
-          </div>
-          </div>
+          
             <center> <button onClick ={() => {
                 
               console.log('button was clicked');

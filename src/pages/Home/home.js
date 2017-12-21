@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import './home.css';
 
 class Home extends Component {
   state = {
@@ -23,11 +24,11 @@ class Home extends Component {
         <Row>
           <Col size="md-12">
           
-            <center> <button onClick ={() => {
+            <button onClick ={() => {
                 
               console.log('button was clicked');
               
-            }}><h1>Welcome to The Game App</h1></button></center>
+            }}><h1>Welcome to The Game App</h1></button>
 
           </Col>
         </Row>

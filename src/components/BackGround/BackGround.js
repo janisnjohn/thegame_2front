@@ -1,5 +1,6 @@
 import React from 'react';
 import Video from '../../images/earth_from_space.mp4';
+import './BackGround.css';
 
 const BackGround = props => (
   <video id="background-video" loop autoPlay>

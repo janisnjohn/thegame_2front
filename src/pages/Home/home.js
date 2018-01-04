@@ -23,7 +23,10 @@ class Home extends Component {
       </div>
         <Row>
           <Col size="md-12">
-          
+          <input type="text" name="username"></input>
+          <input type="password" name="password"></input>
+          <submit>Submit</submit>
+
             <button onClick ={() => {
                 
               console.log('button was clicked');

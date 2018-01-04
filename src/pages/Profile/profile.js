@@ -7,50 +7,58 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import Panel from "../../components/ProfPanel";
+import ProfileBox from "../../components/UserAuth/ProfileBox"
+import RegisterForm from "../../components/UserAuth/RegisterForm"
 import './profile.css';
+import  { Redirect } from 'react-router-dom'
 
 class Profile extends Component {
-  state = {
-    name: [],
-    email: "",
-    score: "",
-  };
+    state = {
+      user: null
+    };
 
-  componentDidMount() {
-    this.loadUsers();
-  }
+    componentDidMount() {
+        this.getProfile();
+    }
 
-  loadUsers = () => {
-    API.getUsers()
-      .then(res =>
-        this.setState({ users: res.data, name: "", email: "", score: "" })
-      )
-      .catch(err => console.log(err));
-  };
+    getProfile() {
+        API.getProfile()
+        .then( response => {
+            if (response.data.success){
+                this.setState({ user: response.data.user })
+            } else {
+                return <Redirect to='/login'/>
+            }
+          })
+          .catch( error => {
+              console.log('Error getting profile: ', error)
+              return <Redirect to='/login'/>
+          })
+    }
 
-  render() {
-    return (
-      
-      
-      <Container fluid>
-      <div className="video-background">
-      <div className="video-foreground">
-        <iframe src="https://www.youtube.com/embed/y2RVEK8XkFk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=y2RVEK8XkFk" frameBorder="0" allowFullScreen></iframe>
-       
-        </div>
-      </div>
-        <Row>
-          <Col size="md-12">
-          <h1>Profile</h1>
-          </Col>
-        </Row>
-        <Panel />
-        
-        
-      </Container>
-      
-    );
-  }
+// This page should show the profile and allow for edits
+    render() { 
+      const user = this.state.user
+
+      if (user) {
+        return (
+          <Container>
+            <div>Profile for { user.email }</div>
+            <div>Ship name: {user.shipName}</div>
+            <ProfileBox/>
+          </Container>
+        )
+      } else {
+        return (
+          <Container>
+            <div>You must be logged in to view/edit profile</div>
+            <ProfileBox/>
+            <div> Register: </div>
+            <RegisterForm/>
+          </Container>
+        )
+      }
+    }
 }
 
 export default Profile;

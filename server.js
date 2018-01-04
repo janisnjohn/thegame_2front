@@ -19,7 +19,7 @@ app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
 
 const secrets = {
-  db: 'mongodb://localhost/basic_auth_server',
+  db: 'mongodb://localhost/basic_auth_server' || 'mongodb://john:john@ds153765.mlab.com:53765/heroku_29lvpjp2',
   sessionSecret: 'secret'
 }
 
